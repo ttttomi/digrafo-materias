@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url(/assets/BerkeleyMono-Regular.ttf) format("truetype");
+}
+
+:root {
+  color-scheme: light;
+  
+  --main-black: #0d1326;
+  --main-white: #fff;
+
+  --aprobada: #4EB049;
+  --debe-final: #ffc115;
+  --puede-cursar: #ffffff;
+  --bloqueada: #DA2B28;
+  --en-curso: #2A92D0;
+
+  --correlativa-aprobada: var(--aprobada);
+  --correlativa-cursada: var(--debe-final);
+}
+
+*::selection{
+  background-color: var(--main-black);
+  color: var(--debe-final);
+}
+
+*{font-family: "JetBrains Mono" !important; font-size: 10pt !important;}
+
+html {
+  color: var(--main-black);
+  background-color: var(--main-white);
+  margin: 0;
+}
+
+body { margin: 0;}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  padding: 1vh;
+  justify-content: center;
+  align-items: center;
+}
+
+a{color: var(--debe-final)}
+
+.aprobada {background-color: var(--aprobada);}
+.aprobada>*::selection{color: var(--aprobada); background-color: var(--main-black);}
+.debe-final {background-color: var(--debe-final)}
+.debe-final>*::selection {color: var(--debe-final); background-color: var(--main-black);}
+.en-curso {background-color: var(--en-curso)}
+.en-curso>*::selection {color: var(--en-curso); background-color: var(--main-black);}
+.bloqueada {background-color: var(--bloqueada)}
+.bloqueada>*::selection{color: var(--bloqueada); background-color:var(--main-black);}
+.puede-cursar {background-color: var(--puede-cursar)}
+.puede-cursar>*::selection {color: var(--puede-cursar); background-color: var(--main-black);}
+
+.correlativa-cursada{
+  color: var(--correlativa-cursada);
+}
+.correlativa-aprobada{
+  color: var(--correlativa-aprobada);
+}
+
+.boton-aprobada{background-color: var(--aprobada)}
+.boton-debe-final{background-color: var(--debe-final)}
+.boton-en-curso{ background-color: var(--en-curso)}
+.boton-bloqueada{background-color: var(--bloqueada)}
+.boton-bloqueada:hover{cursor: not-allowed !important}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: solid 1px var(--main-black);
+  padding: 0.5rem;
+}
+
+tr{height: 1px}
+
+#celdaEstado{
+  height: inherit;
+}
+
+.hora::after{
+  content: "hs";
+}
+
+.contenedorBotonesEstado{
+  display: grid;
+  gap: 5px;
+  grid-auto-flow: column;
+  align-items: center;
+  text-align: justify;
+  height: 100%;
+}
+
+.botonEstado{
+  border: 1px solid var(--main-black);
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 10pt !important;
+  white-space: nowrap; /*evita los saltos de linea*/
+}
+
+.botonEstadoSeleccionado{grid-column: 1/-1}
+
+.botonEstado:hover{
+  border: 1px solid var(--main-black);
+  cursor: pointer;
+  box-shadow: none;
+  filter: contrast(1.3);
+}
+
+#contenido{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+#contenedorGrafo{
+  width: 100%; 
+  height: 100vh;
+}
+
+#toolbar{
+  display: grid;
+  grid-auto-flow: column;
+  align-content: center;
+  justify-content: stretch;
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  border: 1px solid var(--main-black);
+  background-color: var(--main-white);
+}
+
+#toolbar > * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: stretch;
+  border-right: 1px solid var(--main-black);
+  padding: 1em;
+}
+
+label{padding: 0 1em 0 1em;}
+
+input{cursor: pointer;}
+
+input[type=range]{
+  border: 1px solid var(--main-black);
+  width: 800px;
+  appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb{
+  appearance: none;
+  height: 1em;
+  width: 1em;
+  background-color: var(--main-black);
+  stroke: red 1px solid;
+  rotate: 45deg;
+}
+
+input[type=checkbox]{
+  appearance: none;
+  border: var(--main-black) 1px solid;
+  width: 1em;
+  height: 1em;
+}
+
+input[type=checkbox]:checked{
+  background-color: var(--main-black);
+  font-size: 10pt;
+  color: var(--main-black);
+}
+
+.checkLabel {cursor: pointer}
+.contenedorCheckbox{cursor: pointer;}
+
+#botonGuardar{
+  appearance: none;
+  background-color: var(--main-white);
+  border: var(--main-black) 0px solid;
+  display: block;
+}
+
+#sol{
+  padding: 10vh;
+}

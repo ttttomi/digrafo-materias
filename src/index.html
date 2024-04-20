@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>DIGRAFO MATERIAS</title>
+    <link rel="shortcut icon mask-icon" href="./assets/sol.svg" color="red">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="toolbar">
+      <div class="contenedorCheckbox">
+        <input type="checkbox" name="inputCorrelativaCursada" id="inputCorrelativasCursadas" checked>
+        <label for="inputCorrelativasCursadas" class="checkLabel">Correlativas cursadas</label>
+      </div>
+      <div class="contenedorCheckbox">
+        <input type="checkbox" name="inputCorrelativaAprobada" id="inputCorrelativasAprobadas" checked >
+        <label for="inputCorrelativasAprobadas" class="checkLabel">Correlativas aprobadas</label>
+      </div>
+      <div>
+        <label for="fuerzaGrafo" id="labelFuerzaGrafo"></label>
+        <input type="range" name="fuerzaGrafo" id="inputFuerzaGrafo" min="0" max="200">
+      </div>
+      <button id="botonGuardar">Guardar</button>
+    </nav>
+
+    <div id="contenido">
+      <div id="contenedorGrafo"></div>
+      <table id="tablaMaterias"></table>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="module" src="main.js"></script>
+
+    <footer>
+        <!--<img src="/assets/sol.svg" id="sol">
+        <p>No vote a la derecha</p>
+        -->
+        <p>por <a href="https://x.com/tommmmmmmmmie" target="_blank">@tommmmmmmmmie</a></p>
+    </footer>
+  </body>
+</html>
